@@ -2,7 +2,6 @@ FROM ubuntu:latest
 
 LABEL maintainer="https://github.com/coldblaze"
 
-# Install sshd, Python3, PyGObject and packages for Korean
 RUN apt-get update -qq -y \
  && apt-get install -qq -y \
     locales \
@@ -23,7 +22,6 @@ RUN apt-get update -qq -y \
     iputils-ping \
     python3 python3-pip \
     python3-graphviz \
- && echo "export XMODIFIERS=@im=nabi" >> /root/.bashrc \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN pip3 install ipython[notebook] \
@@ -38,5 +36,5 @@ RUN pip3 install ipython[notebook] \
     tensorflow \
     keras
 ENV LANG=ko_KR.UTF-8
-ENTRYPOINT service ssh restart && cd /notebook &&jupyter notebook --ip=0.0.0.0 --allow-root 
+ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook
