@@ -26,7 +26,6 @@ RUN apt-get update -qq -y \
  && echo "export XMODIFIERS=@im=nabi" >> /root/.bashrc \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN pip3 install --upgrade pip3
 RUN pip3 install ipython[notebook] \
     numpy \
     scipy \
