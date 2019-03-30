@@ -6,8 +6,7 @@ NAME="keras"
 HOST_NAME="keras"
 ##### END OF CONFIGS #####
 
-#_IMAGE="coldblaze/keras"
-_IMAGE="ubuntu"
+_IMAGE="coldblaze/keras"
 _IMAGE_TAG="latest"
 
 case $1 in
