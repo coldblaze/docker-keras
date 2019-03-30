@@ -17,7 +17,7 @@ $ bash ./ssh_connect.sh
 
 root's password is 'root'.
 
-$ tensorboard --logdir=./grpah
+$ tensorboard --logdir=./graph
 
 and access http://localhost:6006
 
