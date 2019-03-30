@@ -4,10 +4,6 @@ LABEL maintainer="https://github.com/coldblaze"
 
 RUN apt-get update -qq -y \
  && apt-get install -qq -y \
-    locales \
-    language-pack-ko \
- && locale-gen ko_KR.UTF-8 \
- && update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX \
  && apt-get install -qq -y openssh-server \
  && echo 'root:root'|chpasswd \
  && sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
