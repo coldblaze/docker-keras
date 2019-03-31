@@ -20,7 +20,7 @@ RUN apt-get update -qq -y \
     python3-graphviz \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN pip3 install ipython[notebook] \
+RUN pip3 install --no-cache-dir ipython[notebook] \
     numpy \
     scipy \
     scikit-learn \
