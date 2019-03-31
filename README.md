@@ -21,7 +21,7 @@ $ bash ./ssh_connect.sh
 root's password is `root`.
 
 ```bash
-root@keras:/notebook# tensorboard --logdir=./graph
+root@keras:/notebook# tensorboard --logdir=./log
 ```
 then access http://localhost:6006
 
