@@ -29,9 +29,9 @@ RUN pip3 install --no-cache-dir ipython[notebook] \
     pydot \
     h5py \
     opencv-python opencv-contrib-python \
+    seaborn \
     theano \
     tensorflow \
     keras
-ENV LANG=ko_KR.UTF-8
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook
