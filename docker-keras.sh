@@ -22,6 +22,7 @@ run)
    --publish 22:22 \
    --publish 8888:8888 \
    --publish 6006:6006 \
+   --publish 5000:5000 \
    --volume $HOST_VOLUME:$CONTAINER_MNT:rw \
    $_IMAGE:$_IMAGE_TAG
 ;;
