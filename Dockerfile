@@ -32,6 +32,7 @@ RUN pip3 install --no-cache-dir ipython[notebook] \
     seaborn \
     theano \
     tensorflow \
-    keras
+    keras \
+    Flask 
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook
