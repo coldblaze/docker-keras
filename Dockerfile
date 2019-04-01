@@ -17,7 +17,6 @@ RUN apt-get update -qq -y \
     net-tools \
     iputils-ping \
     python3 python3-pip \
-    python3-graphviz \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN pip3 install --no-cache-dir ipython[notebook] \
@@ -28,6 +27,7 @@ RUN pip3 install --no-cache-dir ipython[notebook] \
     pandas \
     pydot \
     h5py \
+    graphviz \
     opencv-python opencv-contrib-python \
     seaborn \
     theano \
