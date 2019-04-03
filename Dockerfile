@@ -18,22 +18,17 @@ RUN apt-get update -qq -y \
     iputils-ping \
     python3 python3-pip \ 
     python3-graphviz \
+    python3-keras \
+    python3-opencv \
+    python3-willow \
+    python3-pandas \
+    python3-seaborn \
+    python3-flask \
+    python3-ipython \
+    python3-notebook \
+    python3-matplotlib \
+    python3-sklearn-lib \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN pip3 install --no-cache-dir ipython[notebook] \
-    numpy \
-    scipy \
-    scikit-learn \
-    matplotlib \
-    pandas \
-    h5py \
-    pydot \
-    opencv-python opencv-contrib-python \
-    pillow \
-    seaborn \
-    theano \
-    tensorflow \
-    keras \
-    Flask 
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook
