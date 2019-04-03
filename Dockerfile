@@ -16,16 +16,17 @@ RUN apt-get update -qq -y \
  && apt-get install -qq -y \
     net-tools \
     iputils-ping \
-    python3-graphviz \
-    python3-willow \
-    python3-seaborn \
-    python3-opencv \
+    python3 \
+    python3-ipython \
+    python3-notebook \
+    python3-keras \
     python3-pandas \
     python3-matplotlib \
     python3-sklearn-lib \
-    python3-keras \
-    python3-ipython \
-    python3-notebook \
+    python3-graphviz \
+    python3-opencv \
+    python3-willow \
+    python3-seaborn \
     python3-flask \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
