@@ -13,6 +13,7 @@ RUN apt-get update -qq -y \
  && sed -ri 's/^#?TCPKeepAlive\s+.*/TCPKeepAlive yes/' /etc/ssh/sshd_config \
  && sed -ri 's/^#?ClientAliveInterval\s+.*/ClientAliveInterval 30/' /etc/ssh/sshd_config \
  && sed -ri 's/^#?ClientAliveCountMax\s+.*/ClientAliveCountMax 60/' /etc/ssh/sshd_config \
+ && echo "Asia/Seoul" > /etc/timezone \
  && apt-get install -qq -y \
     net-tools \
     iputils-ping \

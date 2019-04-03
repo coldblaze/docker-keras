@@ -26,6 +26,7 @@ root@keras:/notebook# tensorboard --logdir=./log
 then access http://localhost:6006
 
 ### Flask
+Use ssh connection.
 
 `hello.py`
 ```python
