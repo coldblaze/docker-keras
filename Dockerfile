@@ -26,9 +26,10 @@ RUN pip3 install --no-cache-dir ipython[notebook] \
     scikit-learn \
     matplotlib \
     pandas \
-    pydot \
     h5py \
+    pydot \
     opencv-python opencv-contrib-python \
+    pillow \
     seaborn \
     theano \
     tensorflow \
