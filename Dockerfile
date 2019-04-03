@@ -16,18 +16,17 @@ RUN apt-get update -qq -y \
  && apt-get install -qq -y \
     net-tools \
     iputils-ping \
-    python3 python3-pip \ 
     python3-graphviz \
-    python3-keras \
-    python3-opencv \
     python3-willow \
-    python3-pandas \
     python3-seaborn \
-    python3-flask \
-    python3-ipython \
-    python3-notebook \
+    python3-opencv \
+    python3-pandas \
     python3-matplotlib \
     python3-sklearn-lib \
+    python3-keras \
+    python3-ipython \
+    python3-notebook \
+    python3-flask \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
