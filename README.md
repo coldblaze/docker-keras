@@ -26,10 +26,9 @@ root@keras:/notebook# tensorboard --logdir=./log
 then access http://localhost:6006
 
 ### Flask
-Use ssh connection.
 
-`hello.py`
 ```python
+# hello.py
 from flask import Flask
 app = Flask(__name__)
 
@@ -41,7 +40,7 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0')
 ```
 
-and run flask.
+Use ssh connection and run flask.
 ```bash
 root@keras:/notebook# python3 hello.py
 ```
