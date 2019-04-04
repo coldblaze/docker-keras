@@ -16,7 +16,6 @@ RUN echo 'root:root'|chpasswd \
  && export DEBIAN_FRONTEND=noninteractive \
  && apt-get install -qq -y \
     tzdata \
- && ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime \
  && dpkg-reconfigure --frontend noninteractive tzdata \
  && apt-get install -qq -y \
     net-tools \
