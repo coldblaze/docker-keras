@@ -2,10 +2,10 @@ FROM ubuntu:latest
 
 LABEL maintainer="https://github.com/coldblaze"
 
-RUN apt-get update -qq -y \
+RUN echo 'root:root'|chpasswd \
+ && apt-get update -qq -y \
  && apt-get install -qq -y \
- && apt-get install -qq -y openssh-server \
- && echo 'root:root'|chpasswd \
+    openssh-server \
  && sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
  && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config \
  && sed -ri 's/^#?PrintMotd\s+.*/PrintMotd no/' /etc/ssh/sshd_config \
@@ -13,7 +13,11 @@ RUN apt-get update -qq -y \
  && sed -ri 's/^#?TCPKeepAlive\s+.*/TCPKeepAlive yes/' /etc/ssh/sshd_config \
  && sed -ri 's/^#?ClientAliveInterval\s+.*/ClientAliveInterval 30/' /etc/ssh/sshd_config \
  && sed -ri 's/^#?ClientAliveCountMax\s+.*/ClientAliveCountMax 60/' /etc/ssh/sshd_config \
- && echo "Asia/Seoul" > /etc/timezone \
+ && export DEBIAN_FRONTEND=noninteractive \
+ && apt-get install -qq -y \
+    tzdata \
+ && ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime \
+ && dpkg-reconfigure --frontend noninteractive tzdata \
  && apt-get install -qq -y \
     net-tools \
     iputils-ping \
