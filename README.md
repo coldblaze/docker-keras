@@ -9,7 +9,7 @@ $ bash ./docker-keras.sh [pull|run|stop]
 
 ### Jupyter Notebook
 
-You can access Jupyter Notebook with browser, the URL is on the terminal(http://localhost:8888/?token=xxxx...).
+You can access Jupyter Notebook with browser, the URL is on the terminal(like http://localhost:8888/?token=xxxx...).
 
 ### Tensorboard
 
@@ -28,7 +28,8 @@ then access http://localhost:6006
 ### Flask
 
 ```python
-# hello.py
+# file: /notebook/hello.py
+
 from flask import Flask
 app = Flask(__name__)
 
@@ -44,5 +45,7 @@ Use ssh connection and run flask.
 ```bash
 root@keras:/notebook# python3 hello.py
 ```
+
+then access http://localhost:5000/
 
 Enjoy.

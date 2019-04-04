@@ -27,6 +27,7 @@ RUN pip3 install --upgrade --no-cache-dir pip \
     scikit-learn \
     matplotlib \
     pandas \
+    pandas_datareader \
     h5py \
     pydot \
     opencv-python opencv-contrib-python \
