@@ -18,7 +18,7 @@ RUN apt-get update -qq -y \
  && apt-get install -qq -y \
     net-tools \
     iputils-ping \
-    xorg openbox \
+    xorg \
     libgl1-mesa-glx \
     dbus-x11 \
     python3 \
