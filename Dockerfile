@@ -16,14 +16,18 @@ RUN apt-get update -qq -y \
  && sed -ri 's/^#?ClientAliveInterval\s+.*/ClientAliveInterval 30/' /etc/ssh/sshd_config \
  && sed -ri 's/^#?ClientAliveCountMax\s+.*/ClientAliveCountMax 60/' /etc/ssh/sshd_config \
  && apt-get install -qq -y \
+    locales \
+    language-pack-ko \
+ && locale-gen ko_KR.UTF-8 \
+ && update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX \
+ && echo "export XMODIFIERS=@im=nabi" >> /root/.bashrc \
+    fonts-nanum fonts-nanum-extra nabi \
     net-tools \
     iputils-ping \
-    x11-apps \
-    libgl1-mesa-glx \
-    dbus-x11 \
-    python3 \
-    python3-pip \ 
+    python3 python3-pip \ 
     python3-graphviz \
+    python3-pyqt5 python3-pyqt5.qtwebengine \
+    libgl1-mesa-glx dbus-x11 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN pip3 install --upgrade --no-cache-dir pip \
