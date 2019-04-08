@@ -30,8 +30,8 @@ RUN apt-get update -qq -y \
     libgl1-mesa-glx dbus-x11 \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN pip3 install --upgrade --no-cache-dir pip \
- && pip install --no-cache-dir ipython[notebook] \
+RUN pip3 install --upgrade --no-cache-dir pip
+RUN pip install --no-cache-dir ipython[notebook] \
     numpy \
     scipy \
     scikit-learn \
