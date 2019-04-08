@@ -18,7 +18,7 @@ RUN apt-get update -qq -y \
  && apt-get install -qq -y \
     net-tools \
     iputils-ping \
-    x11-apps \
+    xserver-xorg xserver-xorg-core \
     libgl1-mesa-glx \
     dbus-x11 \
     python3 \
