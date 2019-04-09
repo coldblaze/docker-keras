@@ -48,4 +48,22 @@ root@keras:/notebook# python3 hello.py
 
 then access http://localhost:5000/
 
+
+### X11 ssh forwading 
+
+You need XWindow system(like XQuartz for macOS, VNC for MS Windows, or XWindow desktop manager for Linux) on your computer.
+
+Make ssh connection to the container.
+```bash
+$ bash ./ssh_connect.sh
+```
+root's password is `root`.
+
+Then test you GUI. 
+
+```bash
+root@keras:/notebook# python3 surface3d.py
+```
+The example, surface3d.py is from https://matplotlib.org/gallery/mplot3d/surface3d.html
+
 Enjoy.
