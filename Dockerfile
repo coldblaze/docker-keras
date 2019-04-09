@@ -2,10 +2,11 @@ FROM ubuntu:latest
 
 LABEL maintainer='https://github.com/coldblaze'
 
-RUN apt-get update -qq -y \
+RUN echo 'root:root' | chpasswd \
+ && export DEBIAN_FRONTEND=noninteractive \
+ && apt-get update -qq -y \
  && apt-get install -qq -y net-tools iputils-ping \
  && apt-get install -qq -y openssh-server \
- && echo 'root:root' | chpasswd \
  && sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
  && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config \
  && sed -ri 's/^#?X11Forwarding\s+.*/X11Forwarding yes/' /etc/ssh/sshd_config \
@@ -21,11 +22,9 @@ RUN apt-get update -qq -y \
  && update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX \
  && apt-get install -qq -y \
     python3 python3-pip \ 
-    python3-graphviz \
- && echo '6:69' | apt-get install -qq -y python3-tk \
- && apt-get install -qq -y \
     libgl1-mesa-glx dbus-x11 \
-    python3-pyqt5 python3-pyqt5.qtwebengine \
+    python3-pyqt5 python3-pyqt5.qtwebengine python3-tk \
+    python3-graphviz \
  && apt-get install -qq -y fonts-nanum fonts-nanum-extra nabi \
  && echo 'export XMODIFIERS=@im=nabi' >> /root/.bashrc \
  && apt-get clean \
@@ -46,6 +45,6 @@ RUN apt-get update -qq -y \
     theano \
     tensorflow \
     keras \
-    Flask 
+    Flask
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook
