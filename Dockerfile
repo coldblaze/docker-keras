@@ -23,7 +23,7 @@ RUN apt-get update -qq -y \
     python3 python3-pip \ 
     python3-graphviz \
  && echo '6:69' | apt-get install -qq -y python3-tk \
- && apt-get install -qq -y
+ && apt-get install -qq -y \
     libgl1-mesa-glx dbus-x11 \
     python3-pyqt5 python3-pyqt5.qtwebengine \
  && apt-get install -qq -y fonts-nanum fonts-nanum-extra nabi \
