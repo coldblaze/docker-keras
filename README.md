@@ -59,7 +59,7 @@ $ bash ./ssh_connect.sh
 ```
 root's password is `root`.
 
-Then test you GUI. 
+Then test you GUI with python3-tk or python3-pyqt5. 
 
 ```bash
 root@keras:/notebook# python3 surface3d.py
