@@ -1,11 +1,11 @@
 FROM ubuntu:latest
 
-LABEL maintainer="https://github.com/coldblaze"
+LABEL maintainer='https://github.com/coldblaze'
 
 RUN apt-get update -qq -y \
  && apt-get install -qq -y net-tools iputils-ping \
  && apt-get install -qq -y openssh-server \
- && echo 'root:root'|chpasswd \
+ && echo 'root:root' | chpasswd \
  && sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
  && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config \
  && sed -ri 's/^#?X11Forwarding\s+.*/X11Forwarding yes/' /etc/ssh/sshd_config \
@@ -19,14 +19,15 @@ RUN apt-get update -qq -y \
  && apt-get install -qq -y locales language-pack-ko \
  && locale-gen ko_KR.UTF-8 \
  && update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX \
- && echo "58" | apt-get install -qq -y xorg \
- && apt-get install -qq -y fonts-nanum fonts-nanum-extra nabi \
- && echo "export XMODIFIERS=@im=nabi" >> /root/.bashrc \
  && apt-get install -qq -y \
     python3 python3-pip \ 
     python3-graphviz \
+ && echo '6:69' | apt-get install -qq -y python3-tk \
+ && apt-get install -qq -y
     libgl1-mesa-glx dbus-x11 \
-    python3-tk python3-pyqt5 python3-pyqt5.qtwebengine \
+    python3-pyqt5 python3-pyqt5.qtwebengine \
+ && apt-get install -qq -y fonts-nanum fonts-nanum-extra nabi \
+ && echo 'export XMODIFIERS=@im=nabi' >> /root/.bashrc \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
  && pip3 install --upgrade --no-cache-dir pip \
