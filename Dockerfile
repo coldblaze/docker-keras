@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+﻿FROM ubuntu:latest
 
 LABEL maintainer='https://github.com/coldblaze'
 
@@ -21,8 +21,9 @@ RUN echo 'root:root' | chpasswd \
  && locale-gen ko_KR.UTF-8 \
  && update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX \
  && apt-get install -qq -y \
-    python3 python3-pip \ 
     libgl1-mesa-glx dbus-x11 \
+    openbox tightvncserver xterm openbox vim \
+    python3 python3-pip \ 
     python3-pyqt5 python3-pyqt5.qtwebengine python3-tk \
     python3-graphviz \
  && apt-get install -qq -y fonts-nanum fonts-nanum-extra nabi \
