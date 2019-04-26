@@ -22,7 +22,7 @@ RUN echo 'root:root' | chpasswd \
  && update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX \
  && apt-get install -qq -y \
     libgl1-mesa-glx dbus-x11 \
-    openbox tightvncserver xterm openbox vim \
+    openbox xterm tightvncserver vim \
     python3 python3-pip \ 
     python3-pyqt5 python3-pyqt5.qtwebengine python3-tk \
     python3-graphviz \
@@ -47,5 +47,6 @@ RUN echo 'root:root' | chpasswd \
     tensorflow \
     keras \
     Flask
+ENV LANG=ko_KR.UTF-8
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook
