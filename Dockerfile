@@ -47,6 +47,5 @@ RUN echo 'root:root' | chpasswd \
     tensorflow \
     keras \
     Flask
-ENV LANG=en_US.UTF-8
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook

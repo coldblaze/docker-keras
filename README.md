@@ -51,7 +51,7 @@ then access http://localhost:5000/
 
 ### X11 ssh forwading 
 
-You need XWindow system(like XQuartz for macOS, VNC for MS Windows, or XWindow desktop manager for Linux) on your computer.
+You need XWindow system(like XQuartz for macOS or XWindow desktop manager for Linux) on your computer.
 
 Make ssh connection to the container.
 ```bash
