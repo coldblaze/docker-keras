@@ -110,7 +110,7 @@ root@keras:~# vncserver
 
 On Windows, Download putty and vnc viwer.
 
-Run putty and Click on “Change Settings”–> Connection –> SSH –> Tunnels. In “Add new forwarded port” –> Enter source port as 5901 and Destination as server-ip:5901. Click on Add button and Click on Apply button. Then, save the session.
+Run putty and Click on “Change Settings”–> Connection –> SSH –> Tunnels. In “Add new forwarded port” –> Enter source port as 5901 and Destination as localhost:5901. Click on Add button and Click on Apply button. Then, save the session.
 
 Do not close the putty ssh connection window, Open VNC viewer and connect to localhost:1
 
