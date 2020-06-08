@@ -45,7 +45,6 @@ RUN echo 'root:root' | chpasswd \
     seaborn \
     theano \
     tensorflow \
-    keras \
     Flask
 ENTRYPOINT service ssh restart && cd /notebook && jupyter notebook --ip=0.0.0.0 --allow-root 
 WORKDIR /notebook
