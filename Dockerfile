@@ -23,6 +23,7 @@ RUN echo 'root:root' | chpasswd \
  && apt-get install -qq -y \
     libgl1-mesa-glx dbus-x11 \
     openbox xterm tightvncserver vim \
+    sqlite3 libsqlite3-dev \ 
     python3 python3-pip \ 
     python3-pyqt5 python3-pyqt5.qtwebengine python3-tk \
     python3-graphviz \
